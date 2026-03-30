@@ -1,0 +1,22 @@
+<!-- <div *ngIf="job">
+    <h2>{{ job.title }}</h2>
+    <p>{{ job.companyName }}</p>
+    <p>{{ job.location }}</p>
+  
+    <div [innerHTML]="job.description"></div>
+  </div> -->
+
+
+  <div *ngIf="job; else loading">
+    <h2>{{ job.title }}</h2>
+    <p>{{ job.companyName }}</p>
+    <p>{{ job.location }}</p>
+    <div [innerHTML]="job.description"></div>
+  </div>
+  
+  <ng-template #loading>
+    <p>Loading job...</p>
+  </ng-template>
+
+
+  

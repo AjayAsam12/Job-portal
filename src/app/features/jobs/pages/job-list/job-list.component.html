@@ -1,1 +1,14 @@
-<p>job-list works!</p>
+<!-- <div *ngFor="let job of jobs">
+    {{ job.title }}
+  </div> -->
+
+  <div *ngIf="jobs.length; else loading">
+    <app-job-card
+      *ngFor="let job of jobs"
+      [job]="job">
+    </app-job-card>
+  </div>
+  
+  <ng-template #loading>
+    <p>Loading jobs...</p>
+  </ng-template>
